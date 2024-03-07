@@ -9,10 +9,6 @@
   <input type="text"  [(ngModel)]="studentName" placeholder="Enter Student Name"> 
 </div>
 
-<div class="input-box"> 
-  <label class="label-text"> Roll Number: </label> 
-  <input type="text" [(ngModel)]="studentRollNo" placeholder="Enter Student Roll Number"> 
-</div>
 
 <div class="input-box">
   <label class="label-text" > Year: </label>
@@ -36,20 +32,28 @@
 
 
 <table *ngIf="isDataSubmitted">
+  
   <tr>
-    <th>NAME</th>
     <th>ROLL.NO</th>
+    <th>NAME</th>
     <th>YEAR</th>
     <th>CONTACT</th>
     <th>ACTIVITY</th>
   </tr>
-  <tr *ngFor="let student of students" >
-    <td>{{student.name}}</td>
-    <td>{{student.rollNo}}</td>
-    <td>{{student.year}}</td>
-    <td>{{student.contact}}</td>
-    <td>{{student.activity}}</td>
+
+
+  <tr *ngFor="let student of students; let i = index" >
+    <td>{{i+1}}</td>
+    <td><input type="text" [(ngModel)]="student.name"></td>
+    <td><input type="text" [(ngModel)]="student.year"></td>
+    <td><input type="text" [(ngModel)]="student.contact"></td>
+    <td><input type="text" [(ngModel)]="student.activity"></td>
+    <td> <button (click)="updateRow(i)" > UPDATE </button> </td>
+    <td> <button (click)="deleteRow(i)" > DELETE </button> </td>
   </tr>
+  
 
 </table>
+
+
 

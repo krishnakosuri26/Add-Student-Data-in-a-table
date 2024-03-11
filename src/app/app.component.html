@@ -30,6 +30,15 @@
   <button class="btn" (click)="display()"> Submit</button>
 </div>
 
+<div class="instructions-text">
+    <span [ngStyle]="{'font-size':'20px'}">INSTRUCTIONS:</span> <br>
+    &#x2022; UPDATE: You can update the student details by clicking the update button in the table. <br>
+    &#x2022; After updating you have to click the SUBMIT for the save edited details of the student. <br>
+    &#x2022; DELETE: You can delete the particular student details by clicking the DELETE button. <br>
+  
+</div>
+
+
 
 <table *ngIf="isDataSubmitted">
   <tr>

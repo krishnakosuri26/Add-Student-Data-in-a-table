@@ -32,7 +32,6 @@
 
 
 <table *ngIf="isDataSubmitted">
-  
   <tr>
     <th>ROLL.NO</th>
     <th>NAME</th>
@@ -40,19 +39,15 @@
     <th>CONTACT</th>
     <th>ACTIVITY</th>
   </tr>
-
-
-  <tr *ngFor="let student of students; let i = index" >
+  <tr *ngFor="let student of students; let i = index">
     <td>{{i+1}}</td>
-    <td><input type="text" [(ngModel)]="student.name"></td>
-    <td><input type="text" [(ngModel)]="student.year"></td>
-    <td><input type="text" [(ngModel)]="student.contact"></td>
-    <td><input type="text" [(ngModel)]="student.activity"></td>
-    <td> <button (click)="updateRow(i)" > UPDATE </button> </td>
-    <td> <button (click)="deleteRow(i)" > DELETE </button> </td>
+    <td>{{student.name}}</td>
+    <td>{{student.year}}</td>
+    <td>{{student.contact}}</td>
+    <td>{{student.activity}}</td>
+    <td><button (click)="updateRow(i)">UPDATE</button></td>
+    <td><button (click)="deleteRow(i)">DELETE</button></td>
   </tr>
-  
-
 </table>
 
 
